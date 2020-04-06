@@ -10,7 +10,7 @@ public class CabInvoice {
     //METHOD TO GET TOTAL FARE FOR JOURNEY
     public double getTotalFare(double distance, int time) {
         totalFare = distance * COST_PER_KILOMETER + time * COST_PER_MINUTE;
-        return totalFare;
+        return Math.max(MINIMUM_FARE, totalFare);
     }
 
     //MAIN METHOD
