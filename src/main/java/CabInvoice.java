@@ -4,12 +4,14 @@ public class CabInvoice {
     int COST_PER_MINUTE = 1;
     int MINIMUM_FARE = 5;
 
-    //VARIABLES
+    //VARIABLE
     double totalFare = 0;
 
     //METHOD TO GET TOTAL FARE FOR JOURNEY
-    public double getTotalFare(double distance, int time) {
-        totalFare = distance * COST_PER_KILOMETER + time * COST_PER_MINUTE;
+    public double getTotalFare(Ride[] rides) {
+        for (Ride ride : rides) {
+            totalFare += ride.journeyDistance * COST_PER_KILOMETER + ride.journeyTime * COST_PER_MINUTE;
+        }
         return Math.max(MINIMUM_FARE, totalFare);
     }
 
