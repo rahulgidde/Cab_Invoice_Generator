@@ -16,6 +16,7 @@ public class CabInvoice {
     }
 
     public InvoiceDetails getInvoiceDetails(Ride[] rides) {
-        return null;
+        double totalFare = getTotalFare(rides);
+        return new InvoiceDetails(rides.length, totalFare);
     }
 }

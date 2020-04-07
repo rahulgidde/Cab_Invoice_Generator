@@ -28,10 +28,9 @@ public class CabInvoiceTest {
 
     @Test
     public void givenDistanceAndTime_InvoiceGeneratorCalculateFare_ShouldReturnInvoiceDetails() {
-        Ride [] rides = {new Ride(20,20), new Ride(30,50)};
-        double result = cabInvoice.getTotalFare(rides);
+        Ride[] rides = {new Ride(15, 30), new Ride(25, 50)};
         InvoiceDetails invoiceDetails = cabInvoice.getInvoiceDetails(rides);
-        InvoiceDetails expectedDetails = new InvoiceDetails(4,5);
+        InvoiceDetails expectedDetails = new InvoiceDetails(2, 480);
         Assert.assertEquals(invoiceDetails, expectedDetails);
-     }
+    }
 }
