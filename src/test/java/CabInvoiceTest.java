@@ -29,8 +29,20 @@ public class CabInvoiceTest {
     @Test
     public void givenDistanceAndTime_InvoiceGeneratorCalculateFare_ShouldReturnInvoiceDetails() {
         Ride[] rides = {new Ride(15, 30), new Ride(25, 50)};
-        InvoiceDetails invoiceDetails = cabInvoice.getInvoiceDetails(rides);
+        String userId = "123";
+        cabInvoice.addRide(userId, rides);
+        InvoiceDetails invoiceDetails = cabInvoice.getInvoiceDetails(userId);
         InvoiceDetails expectedDetails = new InvoiceDetails(2, 480);
+        Assert.assertEquals(invoiceDetails, expectedDetails);
+    }
+
+    @Test
+    public void givenRidesAndUserId_InvoiceGeneratorCalculateFare_ShouldReturnInvoiceDetailsList() {
+        Ride[] rides = {new Ride(20, 20), new Ride(30, 30)};
+        String userId = "112";
+        cabInvoice.addRide(userId, rides);
+        InvoiceDetails invoiceDetails = cabInvoice.getInvoiceDetails(userId);
+        InvoiceDetails expectedDetails = new InvoiceDetails(2, 550);
         Assert.assertEquals(invoiceDetails, expectedDetails);
     }
 }

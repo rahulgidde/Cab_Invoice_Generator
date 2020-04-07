@@ -1,21 +1,18 @@
-import jdk.jfr.internal.Repository;
-
 import java.util.ArrayList;
 
 public class CabInvoice {
     //CONSTANT
     private static final double COST_PER_KILOMETER = 10;
     private static final int COST_PER_MINUTE = 1;
-    private static  final int MINIMUM_FARE = 5;
+    private static final int MINIMUM_FARE = 5;
 
     //VARIABLE
     double totalFare = 0;
 
-    Repository repository = null;
+    RidRepository repository;
 
-    public CabInvoice()
-    {
-        this.repository= new Repository;
+    public CabInvoice() {
+        this.repository = new RidRepository();
     }
 
     //METHOD TO GET TOTAL FARE FOR JOURNEY
