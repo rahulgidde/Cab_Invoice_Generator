@@ -4,9 +4,9 @@ public class InvoiceDetails {
     public final double totalFare;
     public final double averageFarePerRide;
 
-    public InvoiceDetails(double numberOfRides, double totalFare, double averageFarePerRide) {
+    public InvoiceDetails(double numberOfRides, double totalFare) {
         this.numberOfRides = numberOfRides;
         this.totalFare = totalFare;
-        this.averageFarePerRide = averageFarePerRide;
+        this.averageFarePerRide = totalFare / numberOfRides;
     }
 }

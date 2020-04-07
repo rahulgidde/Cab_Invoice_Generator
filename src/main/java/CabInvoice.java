@@ -14,4 +14,8 @@ public class CabInvoice {
         }
         return Math.max(MINIMUM_FARE, totalFare);
     }
+
+    public InvoiceDetails getInvoiceDetails(Ride[] rides) {
+        return null;
+    }
 }

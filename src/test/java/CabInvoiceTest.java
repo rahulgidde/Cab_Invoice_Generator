@@ -25,4 +25,13 @@ public class CabInvoiceTest {
         double result = cabInvoice.getTotalFare(rides);
         Assert.assertEquals(480, result, 0);
     }
+
+    @Test
+    public void givenDistanceAndTime_InvoiceGeneratorCalculateFare_ShouldReturnInvoiceDetails() {
+        Ride [] rides = {new Ride(20,20), new Ride(30,50)};
+        double result = cabInvoice.getTotalFare(rides);
+        InvoiceDetails invoiceDetails = cabInvoice.getInvoiceDetails(rides);
+        InvoiceDetails expectedDetails = new InvoiceDetails(4,5);
+        Assert.assertEquals(invoiceDetails, expectedDetails);
+     }
 }
