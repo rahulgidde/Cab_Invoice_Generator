@@ -1,6 +1,6 @@
 public class Ride {
-    double journeyDistance;
-    int journeyTime;
+    public final double journeyDistance;
+    public final int journeyTime;
 
     public Ride(double distance, int time) {
         this.journeyDistance = distance;
