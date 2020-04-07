@@ -45,4 +45,14 @@ public class CabInvoiceTest {
         InvoiceDetails expectedDetails = new InvoiceDetails(2, 550);
         Assert.assertEquals(invoiceDetails, expectedDetails);
     }
+
+    @Test
+    public void givenRidesAndUserId_InvoiceGeneratorCalculateFare_ShouldReturn() {
+        Ride[] rides = {new Ride(20, 20), new Ride(30, 30)};
+        String userId = "112";
+        cabInvoice.addRide(userId, rides);
+        InvoiceDetails invoiceDetails = cabInvoice.getInvoiceDetails(userId);
+        InvoiceDetails expectedDetails = new InvoiceDetails(2, 550);
+        Assert.assertEquals(invoiceDetails, expectedDetails);
+    }
 }
